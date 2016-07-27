@@ -1,0 +1,10 @@
+Dodaj Tlumaczenie:
+<form method="get" target="">
+    <input type="text" name="slowo" value="None">
+    <input type="submit" name="add_word" value="Add">
+    <input type="submit" name="del_word" value="Delete">
+</form>
+<br>
+{% if err %}
+    {{ err }}
+{% endif %}

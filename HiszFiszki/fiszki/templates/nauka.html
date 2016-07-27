@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="get" target="">
+    <input type="text" name="losuj_ile" value="1">
+    <input type="submit" name="losuj" value="Losuj">
+</form>
+
+<a href="/fiszki/">Strona glowna</a><br>
+{% if wylosowane %}
+    <h1>Wylosowane slowa:</h1><br>
+    {% for w in wylosowane %}
+    {{ w.word }}<br>
+    <form method="get" action="/fiszki/name/zapisz_odp/">
+        <input type="radio" name="{{ w.id }}" value="_can">T<br>
+        <input type="radio" name="{{ w.id }}" value="_cant">N<br>
+        <input type="radio" name="{{ w.id }}" value="_maybe">Tak Sobie Umiem<br>
+    <form>
+    {% endfor %}
+<input type="submit" value="Wyslij">
+{% endif %}
+
+</body>
+</html>
